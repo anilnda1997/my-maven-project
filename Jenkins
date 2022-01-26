@@ -18,7 +18,8 @@ pipeline {
         }
         stage('---deploy---') { 
             steps {
-                sh " 
+       sh " deploy adapters: [tomcat8(credentialsId: '5b2f463d-382b-4a6e-9305-d526155c8adb', path: '', url: 'localhost:8000')], contextPath: 'my-webs', war: '**/*.war"
+            }
+        }
+   }  
 }
-
-   
