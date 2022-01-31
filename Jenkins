@@ -21,12 +21,12 @@ pipeline {
             steps {
                  
             sshagent(['tomcat-new']) {
-             sh " " "
+             sh ' ' '
              scp -o StrictHostKeyChecking=no target/myweb.war
              anil@10.0.2.15: /ser/apache-tomcat-8.5.73/webapps
              ssh anil@10.0.2.15 /ser/apache-tomcat-8.5.73/bin/shutdown.sh
              ssh anil@10.0.2.15 /ser/apache-tomcat-8.5.73/bin/startup.sh
-                " " "
+                ' ' '
                }   
             }
         }     
