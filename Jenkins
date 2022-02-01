@@ -14,24 +14,20 @@ pipeline {
         stage('---package---') { 
             steps {
                 sh "mvn package"
-                sh "mv target/*.war target/myweb.war"
+            
             }
         }
        stage('---deploy---') { 
             steps {
                  
-            sshagent(['tomcat-new']) {
-             sh ' ' '
-             scp -o StrictHostKeyChecking=no target/myweb.war
-             anil@10.0.2.15: /ser/apache-tomcat-8.5.73/webapps
-             ssh anil@10.0.2.15 /ser/apache-tomcat-8.5.73/bin/shutdown.sh
-             ssh anil@10.0.2.15 /ser/apache-tomcat-8.5.73/bin/startup.sh
-                ' ' '
+           sh cp -f '/home/anil/my-maven-project/target/trucks.war  /home/anil/ser/apache-tomcat-8.5.73/webapps'
+          
+                
                }   
-            }
-        }     
-    }    		
-}       		 
+         }
+     }     
+}    		
+     		 
   
 	  
         
