@@ -20,13 +20,13 @@ pipeline {
        stage('---deploy---') { 
             steps {
                  
-           sh 'cp -f  /home/anil/my-maven-project/target/trucks.war  /home/anil/ser/apache-tomcat-8.5.73/webapps'
-          
-                
-               }   
-         }
-     }     
-}    		
+           sh "cp -f  /home/anil/my-maven-project/target/trucks.war  /home/anil/ser/apache-tomcat-8.5.73/webapps"
+             }     
+         }       
+     }             
+}         
+      
+ 		
      		 
   
 	  
